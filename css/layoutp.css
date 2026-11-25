@@ -1,0 +1,898 @@
+:root {
+    /* Fondos */
+    --color-bg-body: #FFFBD4;
+    --color-bg-content: #F6FFD4;
+    --color-bg-yellow-soft: #F8F8BF;
+    --color-bg-mint-soft: #DBF8BF;
+    --color-bg-accent-yellow: #FAF5AA;
+
+    /* Menú / Navbar */
+    --color-navbar: #A9BD92;
+    --color-navbar-dark: #93BD92;
+    --color-navbar-light: #BDBC92;
+
+    /* Tarjetas / Bloques */
+    --color-card-bg: #D8CBC8;
+    --color-card-bg-alt: #F8DBBF;
+    --color-card-border: #D8D3C8;
+    --color-card-sage: #D5D8C8;
+
+    /* Texto */
+    --color-text-title: #340D41;
+    --color-text-body: #410D34;
+    --color-text-dark: #410D1A;
+
+    /* Detalles */
+    --color-detail-magenta: #D10D78;
+    --color-detail-pink: #F07AD1;
+    --color-detail-rose: #F07A95;
+    --color-detail-peach: #F0997A;
+
+    /* Botones / Formularios / Fondos vacíos */
+    --color-btn-pink: #FCD1FB;
+    --color-btn-soft: #FCD1E5;
+    --color-btn-peach: #FCD2D1;
+    --color-cyan-light: #B4E4DF;
+    --color-blue-light: #B4D1E4;
+    --color-purple-light: #B4B9E4;
+
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-bg-body);
+    color: var(--color-text-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.browser-frame {
+    width: 960px;
+    max-width: 100%;
+    background-color: var(--color-bg-content);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(52, 13, 65, 0.15);
+    overflow: hidden;
+    border: 1px solid var(--color-card-border);
+}
+
+.browser-frame::before {
+    content: "";
+    display: block;
+    height: 30px;
+    background-color: var(--color-card-bg);
+    border-bottom: 1px solid var(--color-card-border);
+    background-image:
+        radial-gradient(circle, var(--color-detail-magenta) 6px, transparent 7px),
+        radial-gradient(circle, var(--color-detail-pink) 6px, transparent 7px),
+        radial-gradient(circle, var(--color-cyan-light) 6px, transparent 7px);
+    background-position: 10px 50%, 30px 50%, 50px 50%;
+    background-repeat: no-repeat;
+}
+
+.site-header {
+    background-color: var(--color-navbar);
+    color: var(--color-text-title);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--color-detail-magenta);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 1.8rem;
+    color: var(--color-detail-magenta);
+}
+
+.site-title {
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--color-text-title);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--color-text-title);
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    transition: all 0.25s ease;
+}
+
+.btn-menu-contacto {
+    background-color: var(--color-cyan-light);
+    border: 1px solid var(--color-detail-rose);
+}
+
+.btn-menu-registro {
+    background-color: var(--color-btn-peach);
+}
+
+.btn-menu-login {
+    background-color: var(--color-btn-pink);
+}
+
+.btn-destacado {
+    background-color: var(--color-btn-soft);
+    border: 1px solid var(--color-detail-magenta);
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+    background-color: var(--color-detail-magenta);
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.site-main {
+    display: flex;
+    padding: 30px 25px;
+    gap: 30px;
+    background-color: var(--color-bg-content);
+}
+
+.content-section {
+    flex: 2;
+    border: 2px solid var(--color-detail-magenta);
+    border-radius: 8px;
+    padding: 25px;
+    background-color: var(--color-card-bg);
+    box-shadow: 4px 4px 0px var(--color-detail-rose);
+}
+
+.content-section h2 {
+    font-size: 1.75rem;
+    color: var(--color-text-title);
+    margin-bottom: 14px;
+}
+
+.content-section p {
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+/* Principal */
+.hero-principal {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.hero-logo-badge {
+    width: 68px;
+    height: 68px;
+    border-radius: 999px;
+    background-color: var(--color-btn-pink);
+    border: 2px solid var(--color-detail-magenta);
+    color: var(--color-text-title);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.hero-fotos-banner {
+    flex: 1;
+    min-width: 220px;
+    background-color: var(--color-bg-yellow-soft);
+    border: 2px solid var(--color-detail-rose);
+    border-radius: 8px;
+    padding: 16px 20px;
+    position: relative;
+    text-align: center;
+}
+
+.etiqueta-foto {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    background-color: var(--color-btn-peach);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+
+.hero-titulo-eclipsia {
+    font-size: 2rem;
+    color: var(--color-text-title);
+    margin-bottom: 0;
+}
+
+.introduccion-box {
+    background-color: var(--color-bg-content);
+    border: 1px solid var(--color-detail-pink);
+    border-radius: 8px;
+    padding: 18px;
+}
+
+.introduccion-box h3 {
+    color: var(--color-text-title);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.panel-seccion {
+    display: none;
+}
+
+.panel-seccion.activo {
+    display: block;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1;
+    border: 2px solid var(--color-detail-pink);
+    border-radius: 8px;
+    padding: 22px;
+    background-color: var(--color-card-bg-alt);
+    box-shadow: 4px 4px 0px var(--color-detail-peach);
+    height: fit-content;
+}
+
+.sidebar h3 {
+    font-size: 1.35rem;
+    color: var(--color-text-title);
+    margin-bottom: 12px;
+}
+
+.sidebar > ul {
+    list-style-position: inside;
+    margin-bottom: 18px;
+}
+
+.sidebar > ul li {
+    margin-bottom: 8px;
+}
+
+.info-box {
+    text-align: center;
+    border-top: 1px dashed var(--color-detail-rose);
+    padding-top: 14px;
+    background-color: var(--color-bg-accent-yellow);
+    border-radius: 6px;
+    padding-bottom: 10px;
+}
+
+.globe-icon {
+    font-size: 2rem;
+    color: var(--color-detail-magenta);
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--color-btn-pink);
+    color: var(--color-text-title);
+    text-align: center;
+    padding: 16px 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--color-detail-magenta);
+}
+
+.footer-datos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--color-text-title);
+}
+
+.footer-copy {
+    font-size: 0.82rem;
+    color: var(--color-text-body);
+}
+
+/* ==========================================================================
+   ARCANOS MAYORES (OSCUROS) Y ARCANOS MENORES (CLAROS) CON IMAGEN A LA IZQUIERDA
+   ========================================================================== */
+.catalogo-mayores .tarjeta-item,
+.catalogo-menores .tarjeta-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 14px 16px 14px 120px;
+    min-height: 118px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    border: 2px solid;
+}
+
+.catalogo-mayores .tarjeta-item::before,
+.catalogo-menores .tarjeta-item::before {
+    content: "Imagen";
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    bottom: 14px;
+    width: 92px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.84rem;
+    border: 1px solid;
+}
+
+.catalogo-mayores .tarjeta-item h4,
+.catalogo-menores .tarjeta-item h4 {
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+}
+
+.catalogo-mayores .tarjeta-item p,
+.catalogo-menores .tarjeta-item p {
+    margin-bottom: 6px;
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+.catalogo-mayores .tarjeta-item p:last-child,
+.catalogo-menores .tarjeta-item p:last-child {
+    margin-bottom: 0;
+}
+
+/* Arcanos Mayores -> Colores oscuros de la paleta */
+.catalogo-mayores .tarjeta-item {
+    background-color: var(--color-text-body);
+    border-color: var(--color-detail-magenta);
+    color: var(--color-bg-body);
+    box-shadow: 3px 3px 0px var(--color-detail-pink);
+}
+
+.catalogo-mayores .tarjeta-item::before {
+    background-color: var(--color-text-dark);
+    border-color: var(--color-detail-pink);
+    color: var(--color-btn-pink);
+}
+
+.catalogo-mayores .tarjeta-item h4,
+.catalogo-mayores .tarjeta-item strong {
+    color: var(--color-btn-pink);
+}
+
+/* Arcanos Menores -> Colores claros de la paleta */
+.catalogo-menores .tarjeta-item {
+    background-color: var(--color-bg-content);
+    border-color: var(--color-navbar-dark);
+    color: var(--color-text-body);
+    box-shadow: 3px 3px 0px var(--color-navbar);
+}
+
+.catalogo-menores .tarjeta-item::before {
+    background-color: var(--color-bg-mint-soft);
+    border-color: var(--color-navbar-dark);
+    color: var(--color-text-title);
+}
+
+.catalogo-menores .tarjeta-item h4,
+.catalogo-menores .tarjeta-item strong {
+    color: var(--color-text-title);
+}
+
+/* ==========================================================================
+   TIENDA: SERVICIOS Y PRODUCTOS CON EL MISMO FORMATO Y COLORES DE PALETA
+   ========================================================================== */
+.tienda-bloque {
+    margin-bottom: 22px;
+}
+
+.tienda-subtitulo {
+    color: var(--color-text-title);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--color-detail-rose);
+}
+
+.grid-productos-boceto {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.item-tienda-boceto {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 2px solid;
+    border-radius: 8px;
+    padding: 12px 14px;
+    flex-wrap: wrap;
+}
+
+.caja-imagen-boceto {
+    width: 86px;
+    height: 74px;
+    border-radius: 6px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.cuerpo-tienda-boceto {
+    flex: 1;
+    min-width: 170px;
+}
+
+.nombre-producto {
+    display: block;
+    font-weight: 700;
+    font-size: 1.02rem;
+    color: var(--color-text-title);
+    margin-bottom: 4px;
+}
+
+.cuerpo-tienda-boceto p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-body);
+}
+
+/* Mismo formato de fila para las tarjetas generadas por JS en #lista-tienda */
+.lista-servicios-boceto .tarjeta-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 115px 12px 114px;
+    min-height: 98px;
+    background-color: var(--color-card-bg-alt);
+    border: 2px solid var(--color-detail-peach);
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.lista-servicios-boceto .tarjeta-item::before {
+    content: "Imagen";
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 86px;
+    height: 74px;
+    border-radius: 6px;
+    background-color: var(--color-purple-light);
+    border: 1px solid var(--color-text-title);
+    color: var(--color-text-title);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.lista-servicios-boceto .tarjeta-item::after {
+    content: "[Agregar]";
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-btn-soft);
+    border: 1px solid var(--color-detail-magenta);
+    color: var(--color-text-title);
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.86rem;
+    cursor: pointer;
+}
+
+.lista-servicios-boceto .tarjeta-item:hover::after {
+    background-color: var(--color-detail-magenta);
+    color: #ffffff;
+}
+
+.lista-servicios-boceto .tarjeta-item h4 {
+    color: var(--color-text-title);
+    margin-bottom: 4px;
+    font-size: 1.02rem;
+}
+
+.lista-servicios-boceto .tarjeta-item p {
+    margin-bottom: 3px;
+    font-size: 0.9rem;
+    color: var(--color-text-body);
+}
+
+.lista-servicios-boceto .tarjeta-item p:last-child {
+    margin-bottom: 0;
+}
+
+/* Colores diferenciados dentro de la paleta para Servicios vs Productos */
+.item-servicio {
+    background-color: var(--color-card-bg-alt);
+    border-color: var(--color-detail-peach);
+}
+
+.item-servicio .caja-imagen-boceto {
+    background-color: var(--color-purple-light);
+    border-color: var(--color-text-title);
+    color: var(--color-text-title);
+}
+
+.item-producto {
+    background-color: var(--color-bg-content);
+    border-color: var(--color-detail-rose);
+}
+
+.item-producto .caja-imagen-boceto {
+    background-color: var(--color-blue-light);
+    border-color: var(--color-text-title);
+    color: var(--color-text-title);
+}
+
+.btn-agregar-carrito {
+    background-color: var(--color-btn-soft);
+    border: 1px solid var(--color-detail-magenta);
+    color: var(--color-text-title);
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.86rem;
+    transition: all 0.2s ease;
+}
+
+.btn-agregar-carrito:hover {
+    background-color: var(--color-detail-magenta);
+    color: #ffffff;
+}
+
+/* Carrusel / Abanico de Cartas (sin modificar) */
+.controles-tirada {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 14px 0 10px;
+}
+
+.selector-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--color-text-title);
+}
+
+.btn-cantidad {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--color-detail-magenta);
+    background: #ffffff;
+    color: var(--color-text-title);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-cantidad.activa,
+.btn-cantidad:hover {
+    background: var(--color-detail-magenta);
+    color: #ffffff;
+}
+
+.btn-secundario {
+    padding: 7px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--color-text-title);
+    background: var(--color-btn-peach);
+    color: var(--color-text-title);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.estado-seleccion {
+    font-weight: 600;
+    color: var(--color-text-title);
+}
+
+.carrusel-cartas {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 18px 12px 24px;
+    margin-bottom: 16px;
+    background: var(--color-card-bg-alt);
+    border: 2px solid var(--color-detail-rose);
+    border-radius: 10px;
+    scroll-behavior: smooth;
+}
+
+.carta-dorso {
+    flex: 0 0 64px;
+    height: 104px;
+    border-radius: 8px;
+    background: linear-gradient(145deg, var(--color-detail-magenta), var(--color-text-title));
+    border: 2px solid var(--color-btn-pink);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(52, 13, 65, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    user-select: none;
+}
+
+.carta-dorso:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 14px rgba(209, 13, 120, 0.35);
+}
+
+.carta-dorso.seleccionada {
+    transform: translateY(-14px);
+    background: linear-gradient(145deg, var(--color-detail-pink), var(--color-detail-magenta));
+    border-color: #ffffff;
+}
+
+.cartas-elegidas-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.chip-carta {
+    background: var(--color-btn-pink);
+    color: var(--color-text-title);
+    border: 1px solid var(--color-detail-magenta);
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.resultado-tirada {
+    margin-top: 22px;
+    padding: 20px;
+    border-radius: 8px;
+    background: var(--color-card-bg-alt);
+    border: 2px solid var(--color-detail-magenta);
+}
+
+.carta-revelada {
+    background: #ffffff;
+    border: 1px solid var(--color-detail-rose);
+    border-radius: 8px;
+    padding: 14px;
+    margin-top: 12px;
+}
+
+/* Botones y Modales */
+.btn-regresar {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 7px 14px;
+    background-color: var(--color-detail-magenta);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.88rem;
+    cursor: pointer;
+}
+
+.btn-regresar:hover {
+    background-color: var(--color-detail-pink);
+    color: var(--color-text-title);
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(65, 13, 26, 0.72);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 16px;
+}
+
+.modal-overlay:target {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--color-card-bg-alt);
+    color: var(--color-text-title);
+    padding: 28px;
+    border-radius: 12px;
+    width: 380px;
+    max-width: 94%;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(52, 13, 65, 0.45);
+    border: 2px solid var(--color-detail-magenta);
+    text-align: center;
+}
+
+.modal-sesion-boceto {
+    background-color: var(--color-purple-light);
+    border-color: var(--color-text-title);
+}
+
+.modal-contacto-boceto {
+    width: 660px;
+    max-width: 96%;
+    background-color: var(--color-card-sage);
+}
+
+.modal-logo-badge {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 10px;
+    border-radius: 999px;
+    background-color: var(--color-btn-pink);
+    border: 2px solid var(--color-detail-magenta);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--color-text-title);
+}
+
+.contacto-grid-boceto {
+    display: flex;
+    gap: 18px;
+    align-items: stretch;
+    margin-top: 12px;
+}
+
+.contacto-form-col {
+    flex: 1.4;
+}
+
+.contacto-fila-doble {
+    display: flex;
+    gap: 10px;
+}
+
+.contacto-fila-doble .campo {
+    flex: 1;
+}
+
+.contacto-imagen-col {
+    flex: 1;
+    display: flex;
+}
+
+.caja-imagen-contacto {
+    width: 100%;
+    min-height: 180px;
+    background-color: var(--color-cyan-light);
+    border: 2px solid var(--color-detail-rose);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--color-text-title);
+}
+
+.btn-cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: var(--color-text-title);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.campo {
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-title);
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--color-detail-rose);
+    background: var(--color-bg-body);
+    color: var(--color-text-dark);
+    font-family: inherit;
+}
+
+.btn-accion {
+    width: 100%;
+    padding: 11px;
+    background-color: var(--color-detail-magenta);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-accion:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .site-main,
+    .contacto-grid-boceto,
+    .contacto-fila-doble {
+        flex-direction: column;
+    }
+
+    .catalogo-mayores .tarjeta-item,
+    .catalogo-menores .tarjeta-item,
+    .lista-servicios-boceto .tarjeta-item {
+        padding: 14px;
+    }
+
+    .catalogo-mayores .tarjeta-item::before,
+    .catalogo-menores .tarjeta-item::before,
+    .lista-servicios-boceto .tarjeta-item::before,
+    .lista-servicios-boceto .tarjeta-item::after {
+        position: static;
+        transform: none;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        margin-bottom: 8px;
+    }
+
+    .lista-servicios-boceto .tarjeta-item::after {
+        margin-top: 8px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+}

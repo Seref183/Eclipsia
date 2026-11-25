@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eclipsia - Tarot y Tiradas</title>
+    <link rel="stylesheet" href="css/layoutp.css">
+</head>
+<body>
+    <div class="browser-frame">
+        <header class="site-header">
+            <div class="logo-container">
+                <span class="logo-icon">⛧⃝𓄃</span>
+                <h1 class="site-title">˚⊱Eclipsia⊰˚</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#inicio" class="nav-link active" data-target="panel-inicio">Inicio</a></li>
+                    <li><a href="#arcanom" class="nav-link" data-target="panel-mayores">Arcanos Mayores</a></li>
+                    <li><a href="#arcanoe" class="nav-link" data-target="panel-menores">Arcanos Menores</a></li>
+                    <li><a href="#tiradas" class="nav-link" data-target="panel-tienda">Tienda</a></li>
+                    <li><a href="#interactiva" class="nav-link btn-destacado" data-target="panel-interactivo">Carrusel</a></li>
+                    <li><a href="#modalContacto" class="btn-menu-contacto">Contacto</a></li>
+                    <li><a href="#modalRegistro" class="btn-menu-registro">Registro</a></li>
+                    <li><a href="#modalLogin" class="btn-menu-login">Sesión</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="site-main">
+            <section class="content-section">
+                <!-- 1. INICIO -->
+                <div id="panel-inicio" class="panel-seccion activo">
+                    <div class="hero-principal">
+                        <div class="hero-logo-badge">⛧⃝𓄃</div>
+                        <div class="hero-fotos-banner" aria-label="Fotos">
+                            <span class="etiqueta-foto">Fotos</span>
+                            <h2 class="hero-titulo-eclipsia">Eclipsia</h2>
+                        </div>
+                    </div>
+                    <div class="introduccion-box">
+                        <h3>Introducción</h3>
+                        <p>Aprende sobre sus cartas, símbolos y realiza lecturas interactivas con un mazo barajado aleatoriamente.</p>
+                        <p>Usa el menú superior para explorar los catálogos o entra a <strong>Carrusel</strong> para elegir tus cartas.</p>
+                    </div>
+                </div>
+
+                <!-- 2. ARCANOS MAYORES -->
+                <div id="panel-mayores" class="panel-seccion">
+                    <button type="button" class="btn-regresar" data-target="panel-inicio">← Volver al Inicio</button>
+                    <h2>Arcanos Mayores</h2>
+                    <div id="lista-mayores" class="lista-tarjetas catalogo-mayores"></div>
+                </div>
+
+                <!-- 3. ARCANOS MENORES -->
+                <div id="panel-menores" class="panel-seccion">
+                    <button type="button" class="btn-regresar" data-target="panel-inicio">← Volver al Inicio</button>
+                    <h2>Arcanos Menores</h2>
+                    <div id="lista-menores" class="lista-tarjetas catalogo-menores"></div>
+                </div>
+
+                <!-- 4. TIENDA -->
+                <div id="panel-tienda" class="panel-seccion">
+                    <button type="button" class="btn-regresar" data-target="panel-inicio">← Volver al Inicio</button>
+                    <h2>Tienda</h2>
+
+                    <div class="tienda-bloque">
+                        <h3 class="tienda-subtitulo">Servicios</h3>
+                        <div class="grid-productos-boceto">
+                            <article class="item-tienda-boceto item-servicio">
+                                <div class="caja-imagen-boceto">Imagen</div>
+                                <div class="cuerpo-tienda-boceto">
+                                    <span class="nombre-producto">Amarre - Dominio</span>
+                                    <p>Trabajo ritual enfocado en atracción y voluntad afectiva.</p>
+                                </div>
+                                <button type="button" class="btn-agregar-carrito">[Agregar]</button>
+                            </article>
+
+                            <article class="item-tienda-boceto item-servicio">
+                                <div class="caja-imagen-boceto">Imagen</div>
+                                <div class="cuerpo-tienda-boceto">
+                                    <span class="nombre-producto">Endulzamiento</span>
+                                    <p>Suaviza tensiones y favorece la cercanía emocional.</p>
+                                </div>
+                                <button type="button" class="btn-agregar-carrito">[Agregar]</button>
+                            </article>
+                        </div>
+                        <div id="lista-tienda" class="lista-tarjetas lista-servicios-boceto"></div>
+                    </div>
+
+                    <div class="tienda-bloque">
+                        <h3 class="tienda-subtitulo">Productos</h3>
+                        <div class="grid-productos-boceto">
+                            <article class="item-tienda-boceto item-producto">
+                                <div class="caja-imagen-boceto">Imagen</div>
+                                <div class="cuerpo-tienda-boceto">
+                                    <span class="nombre-producto">Tarot</span>
+                                    <p>Mazos ilustrados para lectura y estudio simbólico.</p>
+                                </div>
+                                <button type="button" class="btn-agregar-carrito">[Agregar]</button>
+                            </article>
+
+                            <article class="item-tienda-boceto item-producto">
+                                <div class="caja-imagen-boceto">Imagen</div>
+                                <div class="cuerpo-tienda-boceto">
+                                    <span class="nombre-producto">Velas</span>
+                                    <p>Velas rituales por color e intención.</p>
+                                </div>
+                                <button type="button" class="btn-agregar-carrito">[Agregar]</button>
+                            </article>
+
+                            <article class="item-tienda-boceto item-producto">
+                                <div class="caja-imagen-boceto">Imagen</div>
+                                <div class="cuerpo-tienda-boceto">
+                                    <span class="nombre-producto">Cuarzos</span>
+                                    <p>Piedras naturales para armonización y enfoque.</p>
+                                </div>
+                                <button type="button" class="btn-agregar-carrito">[Agregar]</button>
+                            </article>
+
+                            <article class="item-tienda-boceto item-producto">
+                                <div class="caja-imagen-boceto">Imagen</div>
+                                <div class="cuerpo-tienda-boceto">
+                                    <span class="nombre-producto">Libros</span>
+                                    <p>Guías de interpretación y simbolismo esotérico.</p>
+                                </div>
+                                <button type="button" class="btn-agregar-carrito">[Agregar]</button>
+                            </article>
+
+                            <article class="item-tienda-boceto item-producto">
+                                <div class="caja-imagen-boceto">Imagen</div>
+                                <div class="cuerpo-tienda-boceto">
+                                    <span class="nombre-producto">Amuleto</span>
+                                    <p>Talismanes de protección y energía personal.</p>
+                                </div>
+                                <button type="button" class="btn-agregar-carrito">[Agregar]</button>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. TIRADA INTERACTIVA (CARRUSEL SIN MODIFICAR) -->
+                <div id="panel-interactivo" class="panel-seccion">
+                    <button type="button" class="btn-regresar" data-target="panel-inicio">← Volver al Inicio</button>
+                    <h2>Cartas a Elegir</h2>
+                    <p>Escribe tu pregunta, elige cuántas cartas extraer y selecciona tus cartas del mazo barajado.</p>
+
+                    <form id="form-tirada-interactiva">
+                        <div class="controles-tirada">
+                            <div class="selector-cantidad">
+                                <span>Cartas a elegir:</span>
+                                <button type="button" class="btn-cantidad activa" data-cantidad="1">1</button>
+                                <button type="button" class="btn-cantidad" data-cantidad="3">3</button>
+                                <button type="button" class="btn-cantidad" data-cantidad="5">5</button>
+                            </div>
+                            <button type="button" id="btn-rebarajar" class="btn-secundario">↻ Rebarajar mazo</button>
+                        </div>
+
+                        <p id="estado-seleccion" class="estado-seleccion">Selecciona 1 carta del abanico (0/1 elegidas)</p>
+
+                        <!-- Carrusel / Abanico de cartas -->
+                        <div id="carrusel-cartas" class="carrusel-cartas" aria-label="Carrusel de cartas del tarot"></div>
+
+                        <div id="cartas-elegidas-preview" class="cartas-elegidas-preview"></div>
+
+                        <div class="campo">
+                            <label for="pregunta-usuario">¿Pregunta?</label>
+                            <textarea id="pregunta-usuario" name="pregunta" rows="3" required placeholder="Ej: ¿Qué energía me acompaña esta semana?"></textarea>
+                        </div>
+
+                        <button type="submit" id="btn-revelar-tirada" class="btn-accion" disabled>Revelar Significado de la Tirada</button>
+                    </form>
+
+                    <!-- Resultado de la tirada -->
+                    <div id="resultado-tirada" class="resultado-tirada" style="display: none;"></div>
+                </div>
+            </section>
+
+            <!-- Barra lateral: Información -->
+            <aside class="sidebar">
+                <h3>Información</h3>
+                <ul>
+                    <li>Historia</li>
+                    <li>Guía</li>
+                    <li>Cómo funciona</li>
+                    <li>Tipos</li>
+                </ul>
+                <div class="info-box">
+                    <span class="globe-icon">🃜🃚🃖🃁🂭🂺</span>
+                    <p>Adéntrate en el mundo místico del Tarot.</p>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="site-footer footer-contacto-boceto">
+            <div class="footer-datos">
+                <span>Número página</span>
+                <span>Email página</span>
+                <span>Ubicación</span>
+            </div>
+            <p class="footer-copy">&copy; 2026 Eclipsia. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <!-- Modales -->
+    <div id="modalRegistro" class="modal-overlay">
+        <div class="modal-content">
+            <a href="#" class="btn-cerrar">&times;</a>
+            <div class="modal-logo-badge">Logo</div>
+            <h2>Bienvenido</h2>
+            <form action="registrar.php" method="POST">
+                <div class="campo"><label>Nombre usuario:</label><input type="text" name="usuario" required></div>
+                <div class="campo"><label>Contraseña:</label><input type="password" name="password" required></div>
+                <button type="submit" class="btn-accion">Iniciar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalLogin" class="modal-overlay">
+        <div class="modal-content modal-sesion-boceto">
+            <a href="#" class="btn-cerrar">&times;</a>
+            <h2>Iniciar sesión</h2>
+            <form action="validar.php" method="POST">
+                <div class="campo"><label>Nombre:</label><input type="text" name="nombre" required></div>
+                <div class="campo"><label>@ Correo:</label><input type="email" name="email" required></div>
+                <div class="campo"><label>Contraseña:</label><input type="password" name="password" required></div>
+                <button type="submit" class="btn-accion">Registrarme</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalContacto" class="modal-overlay">
+        <div class="modal-content modal-contacto-boceto">
+            <a href="#" class="btn-cerrar">&times;</a>
+            <h2>Contacto</h2>
+            <div class="contacto-grid-boceto">
+                <form action="index.html" method="POST" class="contacto-form-col">
+                    <div class="contacto-fila-doble">
+                        <div class="campo"><label>Email:</label><input type="email" name="email" required></div>
+                        <div class="campo"><label>Teléfono:</label><input type="tel" name="telefono" required></div>
+                    </div>
+                    <div class="campo"><label>Nombre:</label><input type="text" name="nombre" required></div>
+                    <div class="campo"><label>Mensaje:</label><textarea name="mensaje" rows="4" required></textarea></div>
+                    <button type="submit" class="btn-accion">Enviar Mensaje</button>
+                </form>
+                <div class="contacto-imagen-col">
+                    <div class="caja-imagen-contacto">Imagen</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/Tiradas.js"></script>
+</body>
+</html>
